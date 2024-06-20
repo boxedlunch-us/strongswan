@@ -1,6 +1,8 @@
 name: "Default CI Build Steps"
 runs:
   using: "composite"
+  env: 
+    DESTDIR: "asdfasdf"
   steps:
     - name: "Install Dependencies"
       run: ./scripts/test.sh deps
@@ -13,4 +15,10 @@ runs:
       shell: bash
     - name: "Build/Tests"
       run: ./scripts/test.sh
+      shell: bash
+    - name: "install maybe"
+      run: make install
+      shell: bash
+    - name: "list stuff"
+      run: ls -l
       shell: bash
