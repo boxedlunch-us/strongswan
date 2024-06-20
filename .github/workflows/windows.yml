@@ -33,7 +33,7 @@ jobs:
     env:
       OS_NAME: linux
       TEST: ${{ matrix.test }}
-      DESTDIR: asdf
+      DESTDIR: /workspace/asdf
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v4
@@ -48,8 +48,8 @@ jobs:
           ccache -z
       - uses: ./.github/actions/default
       - run: ccache -s
-      - run: ls -altr
-      - run: ls -R asdf
+      - run: ls $DESTDIR -altr
+      - run: ls -R $DESTDIR
       - if: ${{ failure() }}
         uses: actions/upload-artifact@v4
         with:
