@@ -1,8 +1,6 @@
 name: "Default CI Build Steps"
 runs:
   using: "composite"
-  env: 
-    DESTDIR: "asdfasdf"
   steps:
     - name: "Install Dependencies"
       run: ./scripts/test.sh deps
