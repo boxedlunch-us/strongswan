@@ -33,7 +33,7 @@ jobs:
     env:
       OS_NAME: linux
       TEST: ${{ matrix.test }}
-      DESTDIR: /workspace/asdf
+      DESTDIR: /home/runner/work/strongswan/strongswan/asdf
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v4
