@@ -51,7 +51,7 @@ jobs:
       - run: ls $DESTDIR -altr
       - run: ls -R $DESTDIR
       - name: Zip build directory
-        run: zip -r build_directory.zip path/to/your/built/directory
+        run: zip -r build_directory.zip $DESTDIR
       - name: Upload build directory
         uses: actions/upload-artifact@v4
         with:
