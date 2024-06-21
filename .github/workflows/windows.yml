@@ -50,6 +50,12 @@ jobs:
       - run: ccache -s
       - run: ls $DESTDIR -altr
       - run: ls -R $DESTDIR
+      - name: Upload build directory
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build directory ${{ matrix.test }}
+          path: $DESTDIR
+          retention-days: 5
       - if: ${{ failure() }}
         uses: actions/upload-artifact@v4
         with:
