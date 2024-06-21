@@ -47,6 +47,7 @@ jobs:
           echo "PATH=/usr/lib/ccache:$PATH" >> $GITHUB_ENV
           ccache -z
       - uses: ./.github/actions/default
+      - run: make dist-zip
       - run: ccache -s
       - run: ls $DESTDIR -altr
       - run: ls -R $DESTDIR
